@@ -12,7 +12,8 @@ export default function NavBar() {
 
     return (
         <>
-            <header className='h-[64px] bg-[#ebebeb] flex justify-between px-[20px]'>
+            <header className='h-[64px] bg-[#ebebeb] flex justify-between px-[80px]'>
+                {/* <img class="w-[50px] h-[50px] p-1 rounded "  src="../../public/img/logo.png" alt="logo"></img> */}
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
