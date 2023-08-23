@@ -10,15 +10,15 @@ export default function Finder({onKeyUp}) {
 
     useEffect(
         () => { 
-            axios(apiUrl + 'cities?city=' + text.current.value + '&sort=1')
+            axios(apiUrl + 'cities?city=' + text.current.value.trim().toLowerCase() + '&sort=1')
             .then(res => setCities(res.data.response))
-            .catch(err => console.log(err)) 
+            .catch(err => {
+                setCities([])
+                console.log(err)}) 
         }, [reEffect]
     );
-    
 
     function handleFilter() {    
-        console.log(text.current.value);  
         setReEffect(!reEffect);
     }
 
@@ -36,10 +36,13 @@ export default function Finder({onKeyUp}) {
                 </div>
             </div>
            <div className="flex flex-row flex-wrap gap-3 justify-center">
-            {cities.length > 0?
+            {cities.length != 0?
                 cities.map(c=><Card key={c._id} src={c.photo} alt={c.id} country={c.country} city={c.city} city_id={c._id}/>)
                 :
-                <div>No existen tarjetas para mostrar</div>
+                <div className="w-[40vh] h-[30vh] flex flex-col p-4 rounded-lg justify-center items-center 
+                    transform -translate-y-2 transition-all shadow-2xl opacity-90 opacity-100 font-bold">
+                        There are no cities to show. Check your search criteria.
+                </div>
             }
            </div>
         </>

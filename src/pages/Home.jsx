@@ -5,8 +5,7 @@ export default function Home() {
     return ( 
         <main className="flex grow justify-center mt-2">
             <div className="flex flex-col items-center  
-                md:flex-row
-            ">
+                md:flex-row">
                 <div className="flex flex-col p-4 items-center md:items-start">
                     <Anchor to='/pages/cities'>
                         <p className="text-[30px] hover:text-blue-500">Find the perfect destination!</p>
