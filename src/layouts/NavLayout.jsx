@@ -7,7 +7,6 @@ export default function NavLayout() {
     <div className="min-h-screen bg-[#ebebeb] flex flex-col px-10">
         <NavBar/>
           <Outlet/>
-        <Footer/>
     </div>
   )
 }

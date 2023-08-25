@@ -1,20 +1,26 @@
 import { useEffect, useState, useRef } from "react";
-import apiUrl from '../../apiUrl'
-import axios from "axios";
 import Card from "./Card";
+import { useSelector,useDispatch } from "react-redux";
+import city_actions from "../store/actions/cities";
+const {read_cities} = city_actions
 
-export default function Finder({onKeyUp}) {
-    const [cities,setCities] = useState([])
+
+export default function Finder() {
+    /* const [cities,setCities] = useState([]) */
     const text = useRef()
     const [reEffect,setReEffect] = useState(true);
 
+    const cities = useSelector(store => store.cities.cities) //dentro del store el reductor cities el objeto cities
+    const dispatch = useDispatch()
+
     useEffect(
         () => { 
-            axios(apiUrl + 'cities?city=' + text.current.value.trim().toLowerCase() + '&sort=1')
+            dispatch(read_cities({text:text.current.value}))
+            /* axios(apiUrl + 'cities?city=' + text.current.value.trim().toLowerCase() + '&sort=1')
             .then(res => setCities(res.data.response))
             .catch(err => {
                 setCities([])
-                console.log(err)}) 
+                console.log(err)}) */ 
         }, [reEffect]
     );
 
@@ -36,7 +42,7 @@ export default function Finder({onKeyUp}) {
                 </div>
             </div>
            <div className="flex flex-row flex-wrap gap-3 justify-center">
-            {cities.length != 0?
+            {cities?.length != 0?
                 cities.map(c=><Card key={c._id} src={c.photo} alt={c.id} country={c.country} city={c.city} city_id={c._id}/>)
                 :
                 <div className="w-[40vh] h-[30vh] flex flex-col p-4 rounded-lg justify-center items-center 

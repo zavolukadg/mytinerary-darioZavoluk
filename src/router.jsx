@@ -8,17 +8,16 @@ import NotFound from "./pages/NotFound"
 import Itineraries from "./pages/Itineraries"
 import NavLayout from "./layouts/NavLayout"
 import MainLayout from "./layouts/MainLayout"
+import ImageLayout from "./layouts/ImageLayout"
 
 const router = createBrowserRouter([
     {
-      path: "/pages",
+      path: "/",
       element: <MainLayout />,
       children: [
-          { path: "/pages/signin", element: <SignIn />},
-          { path: "/pages/signup", element: <SignUp />},
-          { path: "/pages/cities", element: <Cities /> },
-          { path: "/pages/city/:city_id", element: <CityDetail />},
-          { path: "/pages/*", element: <NotFound />}
+          { path: "/", element: <Home /> },
+          { path: "/cities", element: <Cities /> },
+          { path: "/city/:city_id", element: <CityDetail />},
       ],
     },
     {
@@ -31,6 +30,16 @@ const router = createBrowserRouter([
         { path: "/*", element: <NotFound />}
       ],
     },
+
+    {
+      path: "/",
+      element: <ImageLayout />,
+      children: [
+        { path: "/signin", element: <SignIn />},
+        { path: "/signup", element: <SignUp />},
+      ],
+    },
+    
     {
       path: "/itineraries",
       element: <Itineraries />

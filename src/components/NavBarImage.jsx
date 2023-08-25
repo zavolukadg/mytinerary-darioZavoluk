@@ -12,7 +12,7 @@ export default function NavBar() {
 
     return (
         <>
-            <header className='h-[64px] bg-[#ebebeb] flex justify-between px-[80px]'>
+            <header className='h-[64px] flex justify-between px-[80px] text-white'>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
