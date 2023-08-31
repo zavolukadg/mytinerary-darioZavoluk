@@ -15,7 +15,7 @@ export default function Card({ src,alt,country,city,city_id}) {
                 </div>
             </div>
             <div className="flex justify-end content-end items-end  p-2">
-                <Anchor to={'/pages/city/'+city_id}>
+                <Anchor to={'/city/'+city_id}>
                     <Find />
                 </Anchor>
             </div>
