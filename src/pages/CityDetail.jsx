@@ -25,6 +25,9 @@ export default function CityDetail() {
 
   const handleClick = () => {
     itineraryDiv.current?.scrollIntoView({ behavior: "smooth", block: "start", inline: "nearest" });
+    if(city){
+      console.log(city);
+    }
   };
 
   /*
@@ -62,13 +65,11 @@ export default function CityDetail() {
           <div ref={itineraryDiv} className="flex flex-col items-center">
             {/* <Features currency={'USD'} country={city.city} languaje={city.city} /> */}
             {itineraries?.length != 0 ?
-              itineraries?.map((itinerary, index) => <Itinerary
-                key={index} src={itinerary.photo}
-                name={itinerary.name} alt={itinerary.id} id={itinerary.id}
-              />) : 
-              <div className="w-[40vh] h-[30vh] flex flex-col p-4 rounded-lg justify-center items-center 
+              itineraries?.map((itinerary, index) => <Itinerary key={index} itinerary={itinerary} userPhoto={city.admin_id?.photo}/>)
+              : 
+              <div className="w-[40vh] h-[30vh] flex flex-col m-5 p-4 rounded-lg justify-center items-center 
               transform -translate-y-2 transition-all shadow-2xl opacity-90 opacity-100 font-bold">
-                There are no cities to show. Check your search criteria.
+                There are no itineraries to show.
               </div>
             }
           </div>

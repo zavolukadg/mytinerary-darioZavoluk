@@ -12,7 +12,7 @@ const read_itineraries = createAsyncThunk(
             }
         } catch (error) {
             return{
-                cities:[]
+                itineraries:[]
             }
         }
     }

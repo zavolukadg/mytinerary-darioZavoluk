@@ -45,7 +45,7 @@ export default function Finder() {
             {cities?.length != 0?
                 cities.map(c=><Card key={c._id} src={c.photo} alt={c.id} country={c.country} city={c.city} city_id={c._id}/>)
                 :
-                <div className="w-[40vh] h-[30vh] flex flex-col p-4 rounded-lg justify-center items-center 
+                <div className="w-[40vh] h-[30vh] flex flex-col p-10 rounded-lg justify-center items-center 
                     transform -translate-y-2 transition-all shadow-2xl opacity-90 opacity-100 font-bold">
                         There are no cities to show. Check your search criteria.
                 </div>

@@ -19,7 +19,7 @@ const Accordion = (props) => {
                 </div>
             </div>
             <div className="overflow-hidden duration-500 max-h-0 group-[.is-active]:max-h-[100px]">
-                My name is Lun Dev 
+                Esto es un acordeon de prueba 
             </div>
         </div>
     );

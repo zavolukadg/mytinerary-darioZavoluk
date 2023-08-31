@@ -3,6 +3,7 @@ import itinerary_actions from "../actions/itineraries";
 const {read_itineraries, read_itinerary} = itinerary_actions;
 
 const initial_state = {
+    itineraries:[],
     itinerary:{}
 }
 
