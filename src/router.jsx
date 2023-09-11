@@ -30,7 +30,6 @@ const router = createBrowserRouter([
         { path: "/*", element: <NotFound />}
       ],
     },
-
     {
       path: "/",
       element: <ImageLayout />,
@@ -39,7 +38,6 @@ const router = createBrowserRouter([
         { path: "/signup", element: <SignUp />},
       ],
     },
-    
     {
       path: "/itineraries",
       element: <Itineraries />

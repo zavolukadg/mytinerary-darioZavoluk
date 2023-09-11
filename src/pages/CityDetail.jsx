@@ -3,11 +3,11 @@ import { useEffect, useState, useRef } from 'react'
 import { Link as Anchor } from "react-router-dom";
 import Features from '../components/Features';
 import Itinerary from '../components/Itinerary';
+import NotFound from '../components/NotFound';
 import { useSelector, useDispatch } from "react-redux";
 import city_actions from "../store/actions/cities";
 const { read_city } = city_actions
 import itinerary_actions from "../store/actions/itineraries";
-import NotFound from '../components/NotFound';
 const { read_itineraries } = itinerary_actions;
 
 export default function CityDetail() {
