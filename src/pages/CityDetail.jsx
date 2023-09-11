@@ -8,6 +8,7 @@ import { useSelector, useDispatch } from "react-redux";
 import city_actions from "../store/actions/cities";
 const { read_city } = city_actions
 import itinerary_actions from "../store/actions/itineraries";
+import NotFound from '../components/NotFound';
 const { read_itineraries } = itinerary_actions;
 
 export default function CityDetail() {
